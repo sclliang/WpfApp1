@@ -1,0 +1,40 @@
+﻿<Window x:Class="Camera.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Camera"
+        mc:Ignorable="d"
+        xmlns:xamlHost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
+        Title="CameraTest" Background="Black" Foreground="White"
+        Closing="Window_Closing" WindowState="Maximized" Height="450" Width="800">
+    <Grid Background="Black">
+        <xamlHost:WindowsXamlHost Margin="0,0,100,0"   x:Name="UwpCaptureElementHost" />
+
+        <StackPanel Orientation="Vertical" 
+                   HorizontalAlignment="Right"
+                    Width="100"
+                    VerticalAlignment="Center"
+                    Background="Black"
+                    >
+            <Button Background="Black" BorderBrush="Black"   Click="OnCapturePhotoClick" Width="50" Height="50" >
+                <StackPanel Orientation="Vertical">
+                    <Image Source="/Resources/photo.png" Width="50" Height="50" />
+                </StackPanel>
+                <Button.ToolTip>
+                    <ToolTip Content="PhotoCapture" />
+                </Button.ToolTip>
+            </Button>
+            <Button Background="Black" BorderBrush="Black" Name="VIDEOBTN"  Click="OnStartRecordingClick" Width="50" Height="50" >
+                <StackPanel Orientation="Vertical">
+                    <Image x:Name="VICON" Source="/Resources/record_fill.png" Width="50" Height="50" />
+                </StackPanel>
+                <Button.ToolTip>
+                    <ToolTip Content="VideoRecord" />
+                </Button.ToolTip>
+            </Button>
+           
+        </StackPanel>
+      
+    </Grid>
+</Window>
